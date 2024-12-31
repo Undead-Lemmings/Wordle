@@ -5,7 +5,11 @@ import random
 
 wordlist = []
 
+def test(blah):
+    print(blah)
 
+blah="Hello World!"
+test(blah)
 
 with open("wordlist.txt", "r") as file:
     raw_words = file.readlines()
@@ -38,3 +42,11 @@ for letter_index in range(len(guess)):
         print("_",end="")
 
 
+    # for letter in range(len(guess)):
+    #     i = letter
+    #     if guess[i] == word[i]:
+    #         print(f"[{guess[i]}]", end="")
+    #     elif guess[i] in word:
+    #         print(f"({guess[i]})",end="")
+    #     else:
+    #         print("_", " ", end="")
