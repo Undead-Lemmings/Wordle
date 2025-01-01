@@ -19,10 +19,19 @@ def guess_no():
 
 # Provides last guess results
 def guess_results(guess,word):
-
-    print("")
-
-
+    status = []
+    # Checks each letter of word with the corresponding letter of the guess
+    for i in range(len(guess)):
+        if status.count(f"[{guess[i]}]") + status.count(f"({guess[i]})") >= word.count(word[i]):
+            status.append("_")
+        elif guess[i] == word[i]:
+            status.append(f"[{guess[i]}]")
+        elif guess[i] in word:
+            status.append(f"({guess[i]})")
+        else:
+            status.append("_")
+    return status        
+        
 
 
 # shows available letters
@@ -36,9 +45,8 @@ def main():
     word = select_word()
     print(word)
     while gaming:
-        guess = input("Please enter your word: ").upper
-        if guess > word:
-            print("You")
+        guess = input("Please enter your word: ").upper()
+        print(guess_results(guess, word))
 
 
 
