@@ -11,7 +11,7 @@ def select_word():
         raw_words = file.readlines()
         for possible_word in raw_words:
             wordlist.append(possible_word.replace("\n", "",))
-    return str(choice(wordlist).upper())
+    return choice(wordlist).upper()
 
 # Tracks number of guesses
 def guess_no(total_guesses, number):
@@ -20,7 +20,7 @@ def guess_no(total_guesses, number):
 # Provides last guess results
 def guess_results(guess,word):
     status = ["_"] * len(word)
-        # for loop  - makes sure correct letter/correct place is returned with []
+    # for loop  - makes sure correct letter/correct place is returned with []
     for i in range(len(guess)):
         if guess[i] == word[i]:
             status[i] = f"[{guess[i]}]"
@@ -32,7 +32,7 @@ def guess_results(guess,word):
     for i in range(len(guess)):
         if guess[i] not in word:
             status[i] = "_"
-    return status
+    return " ".join(status)
 
 def check_answer():
     pass
@@ -52,10 +52,11 @@ def main():
     print(word)
     while gaming:
         nguesses += 1
-        print(" ".join(guess_results(guess, word)))
+        print(guess_results(guess, word))
         print(f"You have {guess_no(difficulty,nguesses)} guesses left!")
         guess = input("Please enter your word: ").upper()
-        if "".join(guess_results(guess, word)).replace("[","").replace("]","") == word:
+        # Nat - use guest == word instead of "".join(guess_results(guess, word)).replace("[","").replace("]","") == word
+        if guess == word:
             print("*********************************************************")
             print("CONGRATULATIONS! YOU WIN WORDLE! YOU LITTLE WORDLER 😘😘")
             print("*********************************************************")
