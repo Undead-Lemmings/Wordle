@@ -45,7 +45,7 @@ def main():
     nguesses = 0
     # remaining_letters = ["A","B","C","D","E","F","G","H","U","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     word = select_word()
-    print(word) #used for testing
+    # print(word) #used for testing
     while gaming:
         guess = input("Please enter your word: ").upper()
         nguesses += 1
