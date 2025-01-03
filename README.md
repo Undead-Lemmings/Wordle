@@ -39,3 +39,12 @@ Wordle obviously already [exists](https://www.nytimes.com/games/wordle/index.htm
 2. Using decorators to sanitise input
 3. User fernet to ecrypt/decrypt words in the wordlist
 4. Other stuff, this is already getting out of my depth tbh
+5. Extensibility - Must be able to choose from a variety of different words and lengths if required.
+
+## Game Goals
+1. 
+2. 
+
+## Special Mentions
+ - To my Doteroo, like may she sparkle
+ - To Tabatkins. I spent too long trying to regex a wordlist out of word dumps and they have just got the wordlist [here](https://github.com/tabatkins/wordle-list)
