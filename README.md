@@ -44,3 +44,7 @@ Wordle obviously already [exists](https://www.nytimes.com/games/wordle/index.htm
 ## Game Goals
 1. 
 2. 
+
+## Special Mentions
+ - To my Doteroo, like may she sparkle
+ - To Tabatkins. I spent too long trying to regex a wordlist out of word dumps and they have just got the wordlist [here](https://github.com/tabatkins/wordle-list)

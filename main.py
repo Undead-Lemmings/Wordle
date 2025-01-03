@@ -34,34 +34,34 @@ def guess_results(guess,word):
             status[i] = "_"
     return " ".join(status)
 
-def check_answer():
-    pass
-
-
 # shows available letters
-def alphabet(remaining_letters):
-    print(remaining_letters)
+def alphabet(guess, word):
+    pass
 
 def main():
     gaming = True
     guess = ""
-    difficulty = 6
+    tguesses = 6
     nguesses = 0
-    remaining_letters = ["A","B","C","D","E","F","G","H","U","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    # remaining_letters = ["A","B","C","D","E","F","G","H","U","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     word = select_word()
-    print(word)
+    print(word) #used for testing
     while gaming:
+        guess = input("Please enter your word: ").upper()
         nguesses += 1
         print(guess_results(guess, word))
-        print(f"You have {guess_no(difficulty,nguesses)} guesses left!")
-        guess = input("Please enter your word: ").upper()
+        print(f"You have {guess_no(tguesses,nguesses)} guesses left!")
+        if guess_no(tguesses, nguesses) == 0:
+            print("*********************************************************")
+            print(f"AW NO! YOU HAVE LOST THE WORDLE! THE CORRECT WORD WAS {word.upper()}")
+            print("*********************************************************")
+            gaming = False
         # Nat - use guest == word instead of "".join(guess_results(guess, word)).replace("[","").replace("]","") == word
         if guess == word:
             print("*********************************************************")
             print("CONGRATULATIONS! YOU WIN WORDLE! YOU LITTLE WORDLER 😘😘")
             print("*********************************************************")
             gaming = False
-        
 
 if __name__ == "__main__":
     main()
