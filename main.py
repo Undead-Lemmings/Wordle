@@ -11,11 +11,16 @@ def select_word():
         raw_words = file.readlines()
         for possible_word in raw_words:
             wordlist.append(possible_word.replace("\n", "",))
-    return choice(wordlist).upper()
+    return wordlist
 
 # Tracks number of guesses
 def guess_no(total_guesses, number):
     return total_guesses - number
+
+def input_validation(guess):
+    words = select_word()
+    if guess not in words:
+        print("SORRY LITTLE WORDLER, THAT WORD IS NOT VALID")
 
 # Provides last guess results
 def guess_results(guess,word):
@@ -28,10 +33,10 @@ def guess_results(guess,word):
     for i in range(len(guess)):
         if status[i] != f"[{guess[i]}]" and guess[i] in word and word.count(guess[i]) > (status.count(f"[{guess[i]}]") + status.count(f"({guess[i]})")):
                 status[i] = f"({guess[i]})"
-    # makes sure the _ replaces any wrong letters
-    for i in range(len(guess)):
-        if guess[i] not in word:
-            status[i] = "_"
+    # # makes sure the _ replaces any wrong letters
+    # for i in range(len(guess)):
+    #     if guess[i] not in word:
+    #         status[i] = "_"
     return " ".join(status)
 
 # shows available letters
@@ -44,10 +49,11 @@ def main():
     tguesses = 6
     nguesses = 0
     # remaining_letters = ["A","B","C","D","E","F","G","H","U","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    word = select_word()
-    # print(word) #used for testing
+    word = choice(select_word()).upper()
+    print(word) #used for testing
     while gaming:
         guess = input("Please enter your word: ").upper()
+        print
         nguesses += 1
         print(guess_results(guess, word))
         print(f"You have {guess_no(tguesses,nguesses)} guesses left!")
@@ -62,6 +68,7 @@ def main():
             print("CONGRATULATIONS! YOU WIN WORDLE! YOU LITTLE WORDLER 😘😘")
             print("*********************************************************")
             gaming = False
+
 
 if __name__ == "__main__":
     main()
