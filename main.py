@@ -4,7 +4,6 @@
 
 from random import choice
 
-
 # my Dot made colours in her Wordle and by gosh do I want to do the same now >:[
 def colourise(funguess):
     colourguess = []
@@ -26,9 +25,7 @@ def colourise(funguess):
         else:
             colourguess.append(i)
     return " ".join(colourguess)
-
-
-
+  
 # Chooses the answer word
 def select_word():
     wordlist = []
@@ -72,7 +69,6 @@ def alphabet(letters, guess, word):
         else:
             new_remaining_letters.append(i)
     return new_remaining_letters
-
     
 def main():
     gaming = True
