@@ -81,7 +81,6 @@ def main():
     tguesses = 6
     nguesses = 0
     word = choice(select_word()).upper()
-    print(word)
     while gaming:
         guess = input("Please enter your word: ").upper()
         if input_validation(guess):    
