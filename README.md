@@ -6,7 +6,10 @@ Worlde is a game of word guessing. Each round begins with a 5-letter word being 
 
  <!--language: lang-none -->
     _ _ _ _ _
-They are prompted to guess a word, after which, the word is return with a [] around each character in the correct place, and a () around a correct character in the wrong place. In the below example, a player chooses "PLEAT" as their starting word. The returning response is:
+They are prompted to guess a word, after which, the word is return with a green letter (represented with a [ ]) in the correct place, and a yellow character (represented using ( )) if in the wrong place. In the below example, a player chooses "PLEAT" as their starting word. 
+
+
+The returning response is:
 
 <!-- language: lang-none -->
     [P] _ (E) (A) _
@@ -35,15 +38,14 @@ You will have a limit of 5 guesses. Good luck!
 ## Coding goals
 Wordle obviously already [exists](https://www.nytimes.com/games/wordle/index.html). There are a few goals with this game:
 
-1. Proper use of functions/classes/methods
-2. Using decorators to sanitise input
-3. User fernet to ecrypt/decrypt words in the wordlist
-4. Other stuff, this is already getting out of my depth tbh
-5. Extensibility - Must be able to choose from a variety of different words and lengths if required.
+1. Primarly I am wanting to famliarise myself with Python
+2. Getting familiar with GITHUB as a platform is also good
+3. Idk just having fun really
 
-## Game Goals
-1. 
-2. 
+## Outstanding Game Goals
+1. Replayability - New game (y/n) option after winning/losing
+2. Better wordlist. Current one is a bit rubbish
+3. Package into app using something like pyinstaller
 
 ## Special Mentions
  - To my Doteroo, like may she sparkle
