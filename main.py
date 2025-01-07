@@ -76,7 +76,7 @@ def main():
     remaining_letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     tguesses = 6
     nguesses = 0
-    word = "SNIKES" #choice(select_word()).upper()
+    word = choice(select_word()).upper()
     # print(word)
     while gaming:
         guess = input("Please enter your word: ").upper()
